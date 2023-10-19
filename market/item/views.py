@@ -16,7 +16,7 @@ def createItem(request):
     else:
         form = ItemForm()
 
-    return render(request, 'core/create-item.html', {
+    return render(request, 'item/create-item.html', {
         'form': form
     })
 
