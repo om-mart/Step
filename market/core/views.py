@@ -1,12 +1,14 @@
 from django.shortcuts import render
-from shoe.models import *
+from item.models import Item 
 
-def index(request):
+# render homepage
+def home(request):
     items = Item.objects.filter(is_sold=False)
     
-    return render(request, 'core/index.html', {
+    return render(request, 'core/home.html', {
         'items': items
     })
 
+# render contact page
 def contact(request):
     return render(request, 'core/contact.html')

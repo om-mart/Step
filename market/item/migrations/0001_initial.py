@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(upload_to='item_images')),
                 ('is_sold', models.BooleanField(default=False)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='items', to='shoe.category')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='items', to='item.category')),
             ],
         ),
     ]
