@@ -1,14 +1,31 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Welcome{% endblock %}
+{% block title %}Create Item{% endblock %}
 
 {% block content %}
- 
-  <div class="container">
-    <h3>Shop new arrivals</h3>
+
+<!-- add sizes and multiple images-->
+
+<div class="container">
     <div class="row">
-      {% for item in items %}
-        <div class="col-sm {% if forloop.counter|divisibleby:3 %}mb-4{% endif %}">
+        <div class="col">
+            <img src="{{ item.image.url }}">
+        </div>
+    </div>
+
+    <div class="col bg-gray rounded-xl">
+        <h1>{{ item.title }}</h1>
+        <p><strong>Price:</strong> ${{ item.price }}</p>
+        <p><strong>Description:</strong><br>
+            {{ item.description}}</p>
+    </div>
+</div>
+
+<div class="container">
+    <h2>You may also like</h2>
+    <div class="row">
+      {% for item in related_items %}
+        <div class="col-sm">
             <div class="card" style="width: 18rem;">
                 <a href="{% url 'item:detail' item.id %}"> 
                     <img class="card-img-top" 
@@ -26,4 +43,6 @@
       {% endfor %}
     </div>
   </div>     
+
+
 {% endblock %}

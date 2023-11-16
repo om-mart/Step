@@ -3,7 +3,7 @@ from item.models import Item
 
 # render homepage
 def home(request):
-    items = Item.objects.filter(is_sold=False)
+    items = Item.objects.filter(is_sold=False)[0:3]
     
     return render(request, 'core/home.html', {
         'items': items
