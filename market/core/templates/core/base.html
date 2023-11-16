@@ -50,18 +50,11 @@
                   <li class="nav-item">
                       <a href="{% url 'core:about' %}" class="nav-link">About</a>
                   </li>
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                          Account
-                      </a>
-                      <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Settings</a>
-                          <a class="dropdown-item" href="#">Orders</a>
-                          <a class="dropdown-item" href="#">Log out</a>
-                      </div>
+                  <li class="nav-item">
+                    <a href="{% url 'core:about' %}" class="nav-link">Account</a>
                   </li>
-                  <li>
-                    <a class="btn btn-outline-dark" href="{% url 'item:create-item' %}">Create Item</a>
+                  <li class="nav-item">
+                    <a href="{% url 'core:owner' %}" class="nav-link">Owner</a>
                   </li>
               </ul>
           </div>

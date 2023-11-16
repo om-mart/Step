@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Owner's Dashboard</h2>
+            <a class="btn btn-outline-dark" href="{% url 'item:create-item' %}">Create Item</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

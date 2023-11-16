@@ -4,6 +4,15 @@
 
 {% block content %}
 
+{% for msg in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">      
+  {{ msg }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+
 <div class="container">
     <div class="row">
         <!-- Image Column -->
@@ -30,6 +39,9 @@
                 </select>
                 <div style="margin-top: 1rem;"></div>
                 <button class="btn btn-dark">Add to Cart</button>
+                <a href="{% url 'item:edit-item' item.id %}" class="btn btn-dark">Edit Listing</a>
+                <a href="{% url 'item:delete-item' item.id %}" onclick="return confirmDelete()" 
+                   class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
@@ -59,4 +71,11 @@
     </div>
   </div>     
 
+  <script>
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this listing?');
+    }
+  </script>
+
 {% endblock %}
+

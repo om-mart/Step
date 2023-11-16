@@ -12,3 +12,7 @@ def home(request):
 # render contact page
 def about(request):
     return render(request, 'core/about.html')
+
+# render owner page
+def owner(request):
+    return render(request, 'core/owner.html')
