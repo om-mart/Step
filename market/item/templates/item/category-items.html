@@ -1,13 +1,21 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Welcome{% endblock %}
+{% block title %}Shop {{category}}{% endblock %}
 
 {% block content %}
- 
+
   <div class="container">
-    <h3>Shop new arrivals</h3>
+    <div class="col">
+      <form method="get" action="">
+        <input name="query" type="text" value="{{ query }}" placeholder="Search by color, title, or brand...">
+        <button class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
     <div class="row">
-      {% for item in items %}
+      {% for item in category_items %}
         <div class="col-sm {% if forloop.counter|divisibleby:3 %}mb-4{% endif %}">
             <div class="card" style="width: 18rem;">
                 <a href="{% url 'item:detail' item.id %}"> 
