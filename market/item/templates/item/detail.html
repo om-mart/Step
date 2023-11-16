@@ -4,24 +4,39 @@
 
 {% block content %}
 
-<!-- add sizes and multiple images-->
-
 <div class="container">
     <div class="row">
-        <div class="col">
-            <img src="{{ item.image.url }}">
+        <!-- Image Column -->
+        <div class="col-md-6">
+          <div style="width: 550px; height: 600px; overflow: hidden;">
+            <img src="{{ item.image.url }}" class="img-fluid" style="width: 100%; height: auto;">
+          </div>
         </div>
-    </div>
-
-    <div class="col bg-gray rounded-xl">
-        <h1>{{ item.title }}</h1>
-        <p><strong>Price:</strong> ${{ item.price }}</p>
-        <p><strong>Description:</strong><br>
-            {{ item.description}}</p>
+        <!-- Details Column -->
+        <div class="col-md-6">
+            <div class="bg-light p-3 rounded">
+                <h1>{{ item.title }}</h1>
+                <p><strong>Price:</strong> ${{ item.price }}</p>
+                <p><strong>Description:</strong><br>{{ item.description}}</p>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Select Size</option>
+                  <option value="1">5</option>
+                  <option value="1">5.5</option>
+                  <option value="1">6</option>
+                  <option value="1">6.5</option>
+                  <option value="1">7</option>
+                  <option value="1">7.5</option>
+                  <option value="1">8</option>
+                </select>
+                <div style="margin-top: 1rem;"></div>
+                <button class="btn btn-dark">Add to Cart</button>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="container">
+  <div style="margin-top: 1rem;"></div>
     <h2>You may also like</h2>
     <div class="row">
       {% for item in related_items %}
@@ -43,6 +58,5 @@
       {% endfor %}
     </div>
   </div>     
-
 
 {% endblock %}

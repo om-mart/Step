@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Create Item{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <!-- Image Column -->
+        <div class="col-md-6">
+          <div style="width: 550px; height: 600px; overflow: hidden;">
+            <img src="{% static 'about.jpg' %}" class="img-fluid" style="width: 100%; height: auto;">
+          </div>
+        </div>
+        <!-- Details Column -->
+        <div class="col-md-6">
+            <div class="bg-light p-3 rounded">
+              <h2>About Us</h2>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis officia unde fuga aut. Ipsum, repellendus accusantium? Illo modi nulla veritatis neque quidem delectus? Nobis cumque sint minima aspernatur itaque hic.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
